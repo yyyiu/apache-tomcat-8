@@ -132,6 +132,7 @@ public class StringManager {
             // Avoid NPE if bundle is null and treat it like an MRE
             if (bundle != null) {
                 str = bundle.getString(key);
+                // 编码转换，解决部分乱码问题
                 str = new String(str.getBytes("ISO-8859-1"),"UTF-8");
             }
         } catch (MissingResourceException mre) {

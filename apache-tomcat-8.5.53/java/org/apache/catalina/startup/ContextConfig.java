@@ -775,6 +775,7 @@ public class ContextConfig implements LifecycleListener {
         }
 
         webConfig();
+        // 手动添加 Jasper，否者第一次配置tomcat源码时会报错无法解析JSP文件
         context.addServletContainerInitializer(new JasperInitializer(), null);
         if (!context.getIgnoreAnnotations()) {
             applicationAnnotationsConfig();
